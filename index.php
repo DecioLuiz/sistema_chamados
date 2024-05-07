@@ -21,8 +21,10 @@
         </div>
         <div class="card-body">
           <p class="card-text">Entre para realizar um novo chamado de suporte</p>
-          <div class="d-grid gap-2 col-10 mx-auto">
-            <button class="btn btn-dark" type="button" data-mdb-ripple-init>Entrar</button>
+          <div class="d-grid" style="display:flex; align-items:center">
+            <a href="./chamados.php">
+              <button class="btn btn-dark gap-2 col-12 mx-auto" type="button" data-mdb-ripple-init>Entrar</button>
+            </a>
           </div>
         </div>
       </div>
