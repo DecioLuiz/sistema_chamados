@@ -19,33 +19,33 @@
                         </h4>
                     </div>
                     <div class="card-body">
-                        <form action="" method="POST">
+                        <form action="actions.php" method="POST">
                             <div class="mb-3">
-                                <label>Nome</label>
-                                <input type="text" name="nome" class="form-control">
+                                <label class="form-label">Nome</label>
+                                <input type="text" name="nome" class="form-control" required>
                             </div>
                             <div class="mb-3">
-                                <label>E-mail</label>
-                                <input type="text" name="email" class="form-control">
+                                <label class="form-label">E-mail</label>
+                                <input type="text" name="email" class="form-control" required>
                             </div>
                             <div class="mb-3">
-                                <label>Setor</label>
-                                <select class="form-select form-select-sm" aria-label=".form-select-sm example">
+                                <label class="form-label">Setor</label>
+                                <select class="form-select form-select-sm" aria-label=".form-select-sm example" name="setor">
                                     <option selected>Clique e selecione o setor</option>
-                                    <option value="1">Vendas</option>
-                                    <option value="2">Marketing</option>
-                                    <option value="3">Gerência</option>
-                                    <option value="4">Produção</option>
-                                    <option value="5">Financeiro</option>
+                                    <option value="Vendas">Vendas</option>
+                                    <option value="Marketing">Marketing</option>
+                                    <option value="Gerência">Gerência</option>
+                                    <option value="Produção">Produção</option>
+                                    <option value="Financeiro">Financeiro</option>
                                 </select>
                             </div>
                             <div class="mb-3">
-                                <label>Data do incidente/problema</label>
-                                <input type="date" name="data" class="form-control">
+                                <label class="form-label">Data do incidente/problema</label>
+                                <input type="date" name="data_incidente" class="form-control">
                             </div>
                             <div class="mb-3">
-                                <label>Descrição</label>
-                                <input type="text" name="descricao" class="form-control">
+                                <label class="form-label">Descrição</label>
+                                <textarea type="text" name="descricao" class="form-control" placeholder="Descreva aqui o seu problema/incidente"></textarea>
                             </div>
                             <div class="mb-3">
                                 <button type="submit" name="criar_chamado" class="btn btn-primary">Salvar</button>
