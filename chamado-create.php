@@ -10,7 +10,7 @@
   <body>
     <?php include('navbar.php'); ?>
     <div class="container mt-5">
-        <div class="row" style="position:relative; top: 5rem;">
+        <div class="row" style="position:relative;">
             <div class="col-md-12">
                 <div class="card">
                     <div class="card-header">

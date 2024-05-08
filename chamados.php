@@ -1,4 +1,5 @@
 <?php
+session_start();
 require './conexao.php';
 ?>
 
@@ -8,13 +9,13 @@ require './conexao.php';
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Chamados</title>
-    <!-- <link rel="stylesheet" type="text/css" href="style.css">-->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
   </head>
   <body>
     <?php include('navbar.php'); ?>
-    <div class="container mt-4">
-        <div class="row" style="position:relative; top: 5rem;">
+    <div class="container mt-5">
+        <?php include('mensagem.php'); ?>
+        <div class="row" style="position:relative;">
             <div class="col-md-12">
                 <div class="card">
                     <div class="card-header">
