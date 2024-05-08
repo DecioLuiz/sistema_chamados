@@ -28,16 +28,24 @@ require './conexao.php';
                                     <th>ID</th>
                                     <th>Nome</th>
                                     <th>E-mail</th>
+                                    <th>Setor</th>
                                     <th>Data</th>
                                     <th>Ações</th>
                                 </tr>
                             </thead>
                             <tbody>
+                                <?php
+                                    $sql = 'SELECT * FROM chamados;';
+                                    $chamados = mysqli_query($conexao, $sql);
+                                    if(mysqli_num_rows($chamados) > 0) {
+                                        foreach($chamados as $chamado) {
+                                ?>
                                 <tr>
-                                    <td>1</td>
-                                    <td>Nome Teste</td>
-                                    <td>teste@email.com</td>
-                                    <td>06/05/2024</td>
+                                    <td><?=$chamado['id']?></td>
+                                    <td><?=$chamado['nome']?></td>
+                                    <td><?=$chamado['email']?></td>
+                                    <td><?=$chamado['setor']?></td>
+                                    <td><?=date('d/m/Y', strtotime($chamado['data_incidente']))?></td>
                                     <td>
                                         <a href="" class="btn btn-secondary btn-sm">Visualizar</a>
                                         <a href="" class="btn btn-success btn-sm">Editar</a>
@@ -46,6 +54,12 @@ require './conexao.php';
                                         </form>
                                     </td>
                                 </tr>
+                                <?php
+                                        }
+                                    } else {
+                                        echo '<h5>Nenhum chamado cadastrado</h5><br>';
+                                    }
+                                ?>
                             </tbody>
                         </table>
                     </div>
