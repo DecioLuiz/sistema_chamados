@@ -61,7 +61,7 @@ require 'conexao.php';
                             </div>
                             <div class="mb-3">
                                 <label class="form-label">Descrição</label>
-                                <textarea type="text" name="descricao" placeholder="<?=$chamado['descricao']?>" class="form-control"></textarea>
+                                <textarea type="text" name="descricao" class="form-control"><?=$chamado['descricao']?></textarea>
                             </div>
                             <div class="mb-3">
                                 <button type="submit" name="update_chamado" class="btn btn-primary">Salvar</button>
