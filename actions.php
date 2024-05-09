@@ -48,4 +48,21 @@ if (isset($_POST['update_chamado'])){
     }
 }
 
+if (isset($_POST['delete_chamado'])){
+    $chamado_id = mysqli_real_escape_string($conexao, $_POST['delete_chamado']);
+    
+    $sql = "DELETE FROM chamados WHERE id = '$chamado_id'";
+
+    mysqli_query($conexao, $sql);
+
+    if (mysqli_affected_rows($conexao) > 0) {
+        $_SESSION['mensagem'] = 'Chamado deletado com sucesso';
+        header('Location: chamados.php');
+        exit;
+    } else {
+        $_SESSION['mensagem'] = 'Chamado não foi deletado';
+        header('Location: chamados.php');
+        exit;
+    }
+}	
 ?>
