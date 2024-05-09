@@ -24,4 +24,28 @@ if (isset($_POST['criar_chamado'])){
     }
 }
 
+if (isset($_POST['update_chamado'])){
+    $chamado_id = mysqli_real_escape_string($conexao, $_POST['chamado_id']);
+
+    $nome = mysqli_real_escape_string($conexao, trim($_POST['nome']));	
+    $email = mysqli_real_escape_string($conexao, trim($_POST['email']));	
+    $setor = mysqli_real_escape_string($conexao, trim($_POST['setor']));	
+    $data_incidente = mysqli_real_escape_string($conexao, trim($_POST['data_incidente']));	
+    $descricao = mysqli_real_escape_string($conexao, trim($_POST['descricao']));
+
+    $sql = "UPDATE chamados SET nome='$nome', email='$email', setor='$setor', data_incidente='$data_incidente', descricao='$descricao' WHERE id='$chamado_id'";
+
+    mysqli_query($conexao, $sql);
+    
+    if (mysqli_affected_rows($conexao) > 0){
+        $_SESSION['mensagem'] = 'Chamado atualizado com sucesso!';
+        header('Location: chamados.php');
+        exit;
+    } else {
+        $_SESSION['mensagem'] = 'Chamado não foi atualizado';
+        header("Location: chamados.php");
+        exit;
+    }
+}
+
 ?>
