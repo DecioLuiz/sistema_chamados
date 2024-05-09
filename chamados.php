@@ -14,7 +14,7 @@ require './conexao.php';
 </head>
   <body>
     <?php include('navbar.php'); ?>
-    <div class="container mt-5">
+    <div class="container mt-5" style="display:flex-box; align-items:center; justify-content:center;">
         <?php include('mensagem.php'); ?>
         <div class="row" style="position:relative;">
             <div class="col-md-12">
@@ -51,7 +51,7 @@ require './conexao.php';
                                         <a href="chamado-view.php?id=<?=$chamado['id']?>" class="btn btn-secondary btn-sm"><span class="bi-eye-fill"></span>&nbsp;Visualizar</a>
                                         <a href="chamado-edit.php?id=<?=$chamado['id']?>" class="btn btn-success btn-sm"><span class="bi-pencil-fill"></span>&nbsp;Editar</a>
                                         <form action="actions.php" method="POST" class="d-inline">
-                                            <button onclick="return confirm('Tem certeza que deseja excluir o chamado?')" type="submit" name="delete_chamado" value="<?=$chamado['id']?>" class="btn btn-danger btn-sm"><span class="bi-trash3-fill"></span>&nbsp;Excluir</button>
+                                            <button onclick="return confirm('Tem certeza que deseja excluir o chamado?')" type="submit" name="delete_chamado" value="<?=$chamado['id']?>" class="btn btn-danger btn-sm"><span class="bi-eye-fill"></span>&nbsp;Excluir</button>
                                         </form>
                                     </td>
                                 </tr>
